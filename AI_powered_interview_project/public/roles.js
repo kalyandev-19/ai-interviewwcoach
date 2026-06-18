@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const token = localStorage.getItem("jwtToken");
     if (!token) return;
 
-    const res = await fetch("http://localhost:3000/api/job-roles", {
+    const res = await fetch("/api/job-roles", {
       headers: {
         "Authorization": `Bearer ${token}`
       }

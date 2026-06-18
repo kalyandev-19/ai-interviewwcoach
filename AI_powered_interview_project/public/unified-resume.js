@@ -58,7 +58,7 @@ async function analyzeUnifiedResume() {
   formData.append('resume', unifiedSelectedFile);
 
   try {
-    const res = await fetch("http://localhost:3000/api/resume/analyze-smart", {
+    const res = await fetch("/api/resume/analyze-smart", {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`

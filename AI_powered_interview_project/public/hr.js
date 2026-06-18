@@ -110,7 +110,7 @@ function startRecording() {
     formData.append("email", localStorage.getItem("userEmail"));
 
     try {
-      await fetch("http://localhost:3000/save-recording", {
+      await fetch("/save-recording", {
         method: "POST",
         body: formData
       });
@@ -368,7 +368,7 @@ async function startHRInterview() {
   questionLimit = parseInt(count);
 
   try {
-    const res = await fetch("http://localhost:3000/api/hr/generate", {
+    const res = await fetch("/api/hr/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -433,7 +433,7 @@ async function submitHRAnswer() {
   const question = questions[currentIndex];
 
   try {
-    const res = await fetch("http://localhost:3000/api/hr/evaluate", {
+    const res = await fetch("/api/hr/evaluate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -548,7 +548,7 @@ async function showResult() {
 
   // ✅ SAVE TO BACKEND
   try {
-    await fetch("http://localhost:3000/save-hr-score", {
+    await fetch("/save-hr-score", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

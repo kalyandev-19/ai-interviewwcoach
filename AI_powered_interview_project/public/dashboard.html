@@ -722,7 +722,7 @@
   <!-- JAVASCRIPT LOGIC -->
   <script>
 
-    const API = "http://localhost:3000";
+    const API = window.location.origin;
     const email = localStorage.getItem("userEmail");
     const jwtToken = localStorage.getItem("jwtToken");
 

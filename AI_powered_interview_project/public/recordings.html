@@ -145,7 +145,7 @@
     // ===== LOAD RECORDINGS =====
     async function loadRecordings() {
       try {
-        const res = await fetch(`http://localhost:3000/api/recordings/${encodeURIComponent(email)}`);
+        const res = await fetch(`/api/recordings/${encodeURIComponent(email)}`);
         const data = await res.json();
 
         document.getElementById("loadingBox").style.display = "none";
@@ -159,7 +159,7 @@
         grid.style.display = "grid";
 
         data.files.forEach((filename, index) => {
-          const url = `http://localhost:3000/recordings/${filename}`;
+          const url = `/recordings/${filename}`;
 
           // Format date from filename if possible
           const label = `Recording ${index + 1}`;
@@ -249,7 +249,7 @@
 
       try {
         const res = await fetch(
-          `http://localhost:3000/api/recordings/delete/${filename}`,
+          `/api/recordings/delete/${filename}`,
           { method: "DELETE" }
         );
         const data = await res.json();
